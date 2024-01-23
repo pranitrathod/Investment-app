@@ -1,4 +1,4 @@
-export default function Result({}) {
+export default function Result({render}) {
   return (
     <table id="result">
       <thead>
@@ -11,14 +11,9 @@ export default function Result({}) {
         </tr>
       </thead>
       <tbody>
-      {}
-        <tr>
-          <td>{}</td>
-          <td>{}</td>
-          <td>{}</td>
-          <td>{}</td>
-          <td>{}</td>
-        </tr>
+      <tr>
+      <td>1.</td>
+      </tr>
       </tbody>
     </table>
   );

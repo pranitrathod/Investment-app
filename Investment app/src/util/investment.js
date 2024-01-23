@@ -23,7 +23,6 @@ export default function calculateInvestmentResults({
       annualInvestment: annualInvestment, // investment added in this year
     });
   }
-
   return annualData;
 }
 // The browser-provided Intl API is used to prepare a formatter object
