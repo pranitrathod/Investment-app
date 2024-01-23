@@ -4,7 +4,7 @@
 // - annualInvestment: The amount invested every year
 // - expectedReturn: The expected (annual) rate of return
 // - duration: The investment duration (time frame)
-export function calculateInvestmentResults({
+export default function calculateInvestmentResults({
   initialInvestment,
   annualInvestment,
   expectedReturn,
@@ -26,7 +26,6 @@ export function calculateInvestmentResults({
 
   return annualData;
 }
-
 // The browser-provided Intl API is used to prepare a formatter object
 // This object offers a "format()" method that can be used to format numbers as currency
 // Example Usage: formatter.format(1000) => yields "$1,000"

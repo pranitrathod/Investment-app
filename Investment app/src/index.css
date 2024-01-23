@@ -19,18 +19,15 @@ body {
   margin: 3rem auto;
 }
 
-
 #header img {
   width: 5rem;
   height: 5rem;
   object-fit: contain;
   background-color: transparent;
 }
-
 #header h1 {
   font-size: 1.5rem;
 }
-
 #user-input {
   padding: 1rem;
   max-width: 30rem;
@@ -38,13 +35,11 @@ body {
   border-radius: 4px;
   background: linear-gradient(180deg, #307e6c, #2b996d);
 }
-
 .input-group {
   display: flex;
   justify-content: space-evenly;
   gap: 1.5rem;
 }
-
 #user-input label {
   display: block;
   margin-bottom: 0.25rem;
@@ -53,7 +48,6 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-
 #user-input input {
   width: 100%;
   padding: 0.5rem;
