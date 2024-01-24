@@ -3,20 +3,28 @@ import UserInput from "./Components/UserInput"
 import Result from "./Components/Result"
 import { useState } from "react";
 
-
 function App() {
+  function changeHandler(fieldName,event)
+    {
+        updateFieldName((prevData)=>{
+          console.log(prevData);
+          return{...prevData,[fieldName]:+event.target.value}
+        })
+    }
+  const [fieldName,updateFieldName]=useState({
+    initialInvestment:1200,
+    annualInvestment:15000,
+    expectedReturn:1000,
+    duration:0
+    });
 
-  const [arr,updatedArr]=useState({});
-  function change(result)
-  {
-    updatedArr(result);
-  }
-  // console.log("FROM APP-",value); */
+    const inputCondition=fieldName.duration>0;
   return (
     <>
     <Header/>
-    <UserInput change1={change}/>
-    <Result render={1}/>
+    <UserInput func={changeHandler}/>
+    {!inputCondition && <p className="center">Please enter valid year greater then 0</p>}
+    {inputCondition && <Result render={fieldName}/>} 
   </>
   )
   

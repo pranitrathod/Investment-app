@@ -1,4 +1,8 @@
-export default function Result({render}) {
+import calculateInvestmentResults, { formatter } from "../util/investment.js";
+
+export default function Result({ render }) {
+  const arr = calculateInvestmentResults(render);
+  console.log("INSIDE!=", arr);
   return (
     <table id="result">
       <thead>
@@ -11,9 +15,19 @@ export default function Result({render}) {
         </tr>
       </thead>
       <tbody>
-      <tr>
-      <td>1.</td>
-      </tr>
+        {arr.map((Years) => {
+          const totalNumber =
+            Years.valueEndOfYear - Years.annualInvestment * Years.year;
+          return (
+            <tr key={Years.year}>
+              <td>{Years.year}</td>
+              <td>{Years.interest}</td>
+              <td>{formatter.format(Years.valueEndOfYear)}</td>
+              <td>{formatter.format(Years.annualInvestment)}</td>
+              <td>{formatter.format(totalNumber)}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
